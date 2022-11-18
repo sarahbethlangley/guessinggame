@@ -8,6 +8,9 @@ namespace guessing_game
     {
         static void Main(string[] args)
         {
+
+
+
             Console.WriteLine("Guess the secret number: ");
             string userGuess = Console.ReadLine();
             int parsedGuess = int.Parse(userGuess);
