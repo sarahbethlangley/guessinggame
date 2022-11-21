@@ -10,26 +10,26 @@ namespace guessing_game
         {
 
             int secretNum = 42;
-            int guessAttempts = 0;
 
+            Console.WriteLine("Guess the secret number: ");
+            bool foundNum = false;
+            int userTries = 0;
 
-            while (guessAttempts < 4)
+            while ((foundNum != true) && (userTries < 4))
             {
-                Console.WriteLine("Guess the secret number: ");
                 string userGuess = Console.ReadLine();
                 int parsedGuess = int.Parse(userGuess);
                 if (parsedGuess == secretNum)
                 {
                     Console.WriteLine("Yep, that's the number");
+                    foundNum = true;
 
                 }
                 else
                 {
                     Console.WriteLine("Nah that ain't it.");
+                    userTries++;
                 }
-
-
-                Console.WriteLine(userGuess);
 
             }
         }
