@@ -8,14 +8,15 @@ namespace guessing_game
     {
         static void Main(string[] args)
         {
+            Random r = new Random();
 
-            int secretNum = 42;
+            int secretNum = r.Next(1, 101);
 
             Console.WriteLine("Guess the secret number: ");
             bool foundNum = false;
-            int userTries = 0;
+            int userTriesRemaining = 4;
 
-            while ((foundNum != true) && (userTries < 4))
+            while ((foundNum != true) && (userTriesRemaining != 0))
             {
                 string userGuess = Console.ReadLine();
                 int parsedGuess = int.Parse(userGuess);
@@ -27,8 +28,9 @@ namespace guessing_game
                 }
                 else
                 {
-                    Console.WriteLine("Nah that ain't it.");
-                    userTries++;
+
+                    userTriesRemaining--;
+                    Console.WriteLine("Nah that ain't it, you have " + $"{userTriesRemaining}" + " tries left");
                 }
 
             }
