@@ -30,7 +30,14 @@ namespace guessing_game
                 {
 
                     userTriesRemaining--;
-                    Console.WriteLine("Nah that ain't it, you have " + $"{userTriesRemaining}" + " tries left");
+                    if (parsedGuess > secretNum)
+                    {
+                        Console.WriteLine("Nah that ain't it, your guess was higher than the secret number, you have " + $"{userTriesRemaining}" + " tries left");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Nah that ain't it, your guess was lower than the secret number, you have " + $"{userTriesRemaining}" + " tries left");
+                    }
                 }
 
             }
